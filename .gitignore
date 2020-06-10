@@ -4,3 +4,5 @@ b2csm-explorer/HELP.md
 b2csm-explorer/mvnw
 b2csm-explorer/mvnw.cmd
 b2csm-explorer/package-lock.json
+sigverifyService/mvnw
+sigverifyService/mvnw.cmd
