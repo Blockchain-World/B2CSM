@@ -2,7 +2,7 @@
 
 This is the code for the B2CSM prototype. It builds on top of the popular permissioned blockchain platform - [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-1.2/whatis.html).
 
-**Note: We use real cyber data during our project, as elaborated in the paper. But here we replace with *synthetic* data (e.g., the IP address in the network topology). But it has no any impact for the functions of the prototype.**
+**Note: We use real cyber data during our project, as elaborated in the paper. But here we replace with *synthetic* data (e.g., the IP address in the network topology). It has no any impact for the functions of the prototype.**
 
 ## Software Configuration
 This prototype run successfully on the following configurations:
@@ -10,7 +10,7 @@ This prototype run successfully on the following configurations:
 - Hyperledger Fabric (v1.2)
 - Java 1.8.0
 - Golang 1.11.10
-- Docker (latest)
+- Docker (19.03.2)
 - Maven 3.6.3
 - Git (2.7.4)
 
