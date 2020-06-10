@@ -1,0 +1,313 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>B2CSM Explorer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/font-awesome/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body class="sidebar-fixed header-fixed sidebar-hidden">
+<div class="page-wrapper">
+    <div th:replace="explorer/header :: myheader"></div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/index}" class="nav-link">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/enterprises_explorer}" class="nav-link">
+                            <i class="icon icon-energy"></i> Enterprises
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/orderer_explorer}" class="nav-link">
+                            <i class="icon icon-target"></i> Orderers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/peers_explorer}" class="nav-link">
+                            <i class="icon icon-graph"></i> Peer Nodes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/cas_explorer}" class="nav-link">
+                            <i class="icon icon-puzzle"></i> CA Service
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/channels_explorer}" class="nav-link active">
+                            <i class="icon icon-grid"></i> Channels (APPs)
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/blocks_explorer}" class="nav-link">
+                            <i class="icon icon-umbrella"></i> Blocks
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/transactions_explorer}" class="nav-link">
+                            <i class="icon icon-anchor"></i> Transactions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/chaincodes_explorer}" class="nav-link">
+                            <i class="icon icon-badge"></i> Chaincodes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                GTMW Data Structure
+                            </div>
+
+                            <div class="card-body">
+                                <div style="width: 900px; height: 450px;">
+                                    <img height="400px" width="800px" th:src="@{/imgs/GTMW.jpg}" /> <br />
+                                    Illustration of time series of annotated, directed bipartite graphs G(1),...,G(t) representing the application-URL relation over T=7 time intervals.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (GTMW) Query 1 - Identify Suspicious Apps
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <form id="gtmwQ1Form">
+                                            <div class="form-group">
+                                                <label for="gtmwQ1MaliciousAPP" class="form-control-label require">Malicious APP</label>
+                                                <input id="gtmwQ1MaliciousAPP" class="form-control" placeholder="Please input the malicious App" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="gtmwQ1TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="gtmwQ1TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitGTMWQ1"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 300px; overflow: auto" id="GTMWResultDivQ1">
+                                        <table class="table table-hover" id="gtmwQ1Table">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Suspicious APPs</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                            <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GTMW Query 1 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (GTMW) Query 1 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="gtmwQ1Result">
+                                <div id="gtmwcyQ1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (GTMW) Query 2 - Identify Victim Apps
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <form id="gtmwQ2Form">
+                                            <div class="form-group">
+                                                <label for="gtmwQ2MaliciousURL" class="form-control-label require">Malicious URL</label>
+                                                <input id="gtmwQ2MaliciousURL" class="form-control" placeholder="Please input the malicious URL" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="gtmwQ2TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="gtmwQ2TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitGTMWQ2"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 300px; overflow: auto" id="GTMWResultDivQ2">
+                                        <table class="table table-hover" id="gtmwQ2Table">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Victim APPs</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                            <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GTMW Query 2 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (GTMW) Query 2 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="gtmwQ2Result">
+                                <div id="gtmwcyQ2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (GTMW) Query 3 - Identify Victims of Spoofed Apps
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <form id="gtmwQ3Form">
+                                            <div class="form-group">
+                                                <label for="gtmwQ3LegitimateURL" class="form-control-label require">Legitimate URL</label>
+                                                <input id="gtmwQ3LegitimateURL" class="form-control" placeholder="Please input the legitimate URL" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="gtmwQ3Distance" class="form-control-label require">URL Distance Threshold</label>
+                                                <input id="gtmwQ3Distance" class="form-control" placeholder="Please input a number as the url distance threshold" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="gtmwQ3TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="gtmwQ3TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitGTMWQ3"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 300px; overflow: auto" id="GTMWResultDivQ3">
+                                        <table class="table table-hover" id="gtmwQ3Table">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                            <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GTMW Query 3 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (GTMW) Query 3 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="gtmwQ3Result">
+                                <div id="gtmwcyQ3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/chart.js/chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/carbon.js}"></script>
+<script type="text/javascript" th:src="@{/js/demo.js}"></script>
+<script type="text/javascript" th:src="@{/js/cytoscape.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/gtmw.js}"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+{
+  "name": "hlfv1",
+  "x-type": "hlfv1",
+  "description": "The network configuration of b2csm project",
+  "version": "1.0.0",
+  "client": {
+    "organization": "ent1",
+    "credentialStore": {
+      "path": "/tmp/hfc-kvs",
+      "cryptoStore": {
+        "path": "/tmp/hfc-cvs"
+      },
+      "wallet": "b2csm-wallet"
+    }
+  },
+  "channels": {
+    "b2csm-honeypots": {
+      "orderers": [
+        "1000.frontend.b2csm",
+        "2000.frontend.b2csm",
+        "3000.frontend.b2csm"
+      ],
+      "peers": {
+        "0.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "1.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": false,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "2.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "3.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": false,
+          "ledgerQuery": true,
+          "eventSource": true
+        }
+      },
+      "chaincodes": [
+        "honeypotscc:1.2"
+      ]
+    },
+    "b2csm-nids": {
+      "orderers": [
+        "1000.frontend.b2csm",
+        "2000.frontend.b2csm",
+        "3000.frontend.b2csm"
+      ],
+      "peers": {
+        "0.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "1.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": false,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "2.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "3.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": false,
+          "ledgerQuery": true,
+          "eventSource": true
+        }
+      },
+      "chaincodes": [
+        "nidscc:1.2"
+      ]
+    },
+    "b2csm-gtmw": {
+      "orderers": [
+        "1000.frontend.b2csm",
+        "2000.frontend.b2csm",
+        "3000.frontend.b2csm"
+      ],
+      "peers": {
+        "0.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "1.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": false,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "2.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "3.peer.ent1.b2csm": {
+          "endorsingPeer": true,
+          "chaincodeQuery": false,
+          "ledgerQuery": true,
+          "eventSource": true
+        }
+      },
+      "chaincodes": [
+        "gtmwcc:1.2"
+      ]
+    }
+  },
+  "organizations": {
+    "ent1": {
+      "mspid": "Ent1MSP",
+      "peers": [
+        "0.peer.ent1.b2csm",
+        "1.peer.ent1.b2csm",
+        "2.peer.ent1.b2csm",
+        "3.peer.ent1.b2csm"
+      ],
+      "certificateAuthorities": [
+        "ca.ent1.b2csm"
+      ],
+      "adminPrivateKey": {
+        "pem": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgIAiiVvneKw8nAf2D\nMo+YTVinL5eA3lIfZSbPN1+quDqhRANCAARODkkMx0mEmNdX7fUVUXGIanWiC1cu\n5E03A9K8jBqtYN5FfgT2WmUhd2ER9gRhAGcoDMondTUyg8w6y7Z8/yp3\n-----END PRIVATE KEY-----"
+      },
+      "signedCert": {
+        "path": "src/main/resources/fabric/b2csm/crypto-config/peerOrganizations/ent1.b2csm/users/Admin@ent1.b2csm/msp/signcerts/Admin@ent1.b2csm-cert.pem"
+      }
+    }
+  },
+  "orderers": {
+    "1000.frontend.b2csm": {
+      "grpcOptions": {
+        "url": "grpc://10.102.2.84:7050"
+      },
+      "url": "grpc://10.102.2.84:7050"
+    },
+    "2000.frontend.b2csm": {
+      "grpcOptions": {
+        "url": "grpc://10.102.2.88:7050"
+      },
+      "url": "grpc://10.102.2.88:7050"
+    },
+    "3000.frontend.b2csm": {
+      "grpcOptions": {
+        "url": "grpc://10.102.2.89:7050"
+      },
+      "url": "grpc://10.102.2.89:7050"
+    }
+  },
+  "peers": {
+    "0.peer.ent1.b2csm": {
+      "url": "grpc://10.102.2.84:7051",
+      "eventUrl": "grpc://10.102.2.84:7053",
+      "grpcOptions": {
+        "grpc.http2.keepalive_time": 15,
+        "url": "grpc://10.102.2.84:7051",
+        "eventUrl": "grpc://10.102.2.84:7053"
+      }
+    },
+    "1.peer.ent1.b2csm": {
+      "url": "grpc://10.102.2.88:7051",
+      "eventUrl": "grpc://10.102.2.88:7053",
+      "grpcOptions": {
+        "grpc.http2.keepalive_time": 15,
+        "url": "grpc://10.102.2.88:7051",
+        "eventUrl": "grpc://10.102.2.88:7053"
+      }
+    },
+    "2.peer.ent1.b2csm": {
+      "url": "grpc://10.102.2.89:7051",
+      "eventUrl": "grpc://10.102.2.89:7053",
+      "grpcOptions": {
+        "grpc.http2.keepalive_time": 15,
+        "url": "grpc://10.102.2.89:7051",
+        "eventUrl": "grpc://10.102.2.89:7053"
+      }
+    },
+    "3.peer.ent1.b2csm": {
+      "url": "grpc://10.102.2.90:7051",
+      "eventUrl": "grpc://10.102.2.90:7053",
+      "grpcOptions": {
+        "grpc.http2.keepalive_time": 15,
+        "url": "grpc://10.102.2.90:7051",
+        "eventUrl": "grpc://10.102.2.90:7053"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.ent1.b2csm": {
+      "url": "http://10.102.2.84:7054",
+      "registrar": [
+        {
+          "enrollId": "admin",
+          "enrollSecret": "adminpw",
+          "x-affiliations": [
+            "ent1",
+            "ent1.department1",
+            "ent1.department2"
+          ]
+        }
+      ],
+      "caName": "ca.ent1.b2csm",
+      "x-mspid": "Ent1MSP"
+    }
+  }
+}

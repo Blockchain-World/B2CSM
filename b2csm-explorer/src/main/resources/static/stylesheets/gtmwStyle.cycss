@@ -1,0 +1,73 @@
+node {
+  label: data(name);
+}
+
+edge {
+  opacity: 0.5;
+}
+
+node.highlighted {
+  border-width: 6px;
+}
+
+node.start.query1 {
+  border-color: #ff0000;
+}
+
+node.start.query2 {
+  border-color: #ff0000;
+}
+
+node.start.query3 {
+  border-color: #ff0000;
+  shape: rectangle;
+  background-color: purple;
+}
+
+node.end.query1 {
+  border-color: #ff9999;
+}
+
+node.end.query1.round2 {
+  border-color: #ff0000;
+}
+
+node.end.query2 {
+  border-color: #ff0000;
+}
+
+node.end.query3 {
+  border-color: #ff0000;
+}
+
+edge.highlighted.query1.round1 {
+  line-color: #ff9933;
+  width: 7px;
+  curve-style: bezier;
+  target-arrow-color: #ff9933;
+  target-arrow-shape: triangle;
+}
+
+edge.highlighted.query1.round2 {
+  line-color: #ff0000;
+  width: 8px;
+  curve-style: bezier;
+  source-arrow-color: #ff0000;
+  source-arrow-shape: triangle;
+}
+
+edge.highlighted.query2 {
+  line-color: #ff0000;
+  width: 7px;
+  curve-style: bezier;
+  source-arrow-color: #ff0000;
+  source-arrow-shape: triangle;
+}
+
+edge.highlighted.query3 {
+  line-color: #ff0000;
+  width: 7px;
+  curve-style: bezier;
+  source-arrow-color: #ff0000;
+  source-arrow-shape: triangle;
+}

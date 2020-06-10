@@ -1,0 +1,375 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>B2CSM Explorer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/font-awesome/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body class="sidebar-fixed header-fixed sidebar-hidden">
+<div class="page-wrapper">
+    <div th:replace="explorer/header :: myheader"></div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/index}" class="nav-link">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/enterprises_explorer}" class="nav-link">
+                            <i class="icon icon-energy"></i> Enterprises
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/orderer_explorer}" class="nav-link">
+                            <i class="icon icon-target"></i> Orderers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/peers_explorer}" class="nav-link">
+                            <i class="icon icon-graph"></i> Peer Nodes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/cas_explorer}" class="nav-link">
+                            <i class="icon icon-puzzle"></i> CA Service
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/channels_explorer}" class="nav-link active">
+                            <i class="icon icon-grid"></i> Channels (APPs)
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/blocks_explorer}" class="nav-link">
+                            <i class="icon icon-umbrella"></i> Blocks
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/transactions_explorer}" class="nav-link">
+                            <i class="icon icon-anchor"></i> Transactions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/chaincodes_explorer}" class="nav-link">
+                            <i class="icon icon-badge"></i> Chaincodes
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                NIDS Data Structure
+                            </div>
+
+                            <div class="card-body">
+                                <div style="width: 850px; height: 450px;">
+                                    <img height="400px" width="800px" th:src="@{/imgs/NIDS.jpg}" /> <br />
+                                    Logical representation of the 2017-CDX-USMA data structure. Arrows represent possible connections.
+                                    The "internet" subgraph contains both the red team and the programmed "gray cell",
+                                    5 automated workstations to replicate normal users. Each different colored arrow or circle represents a
+                                    unique graph represented in the data structure: arrows form bipartite graphs, while circles form arbitrary graphs.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (NIDS) Query 1 - Inferring Attack Paths
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <form id="nidsQ1Form">
+                                            <div class="form-group">
+                                                <label for="nidsQ1InternalIP" class="form-control-label require">Attacked Internal IP</label>
+                                                <input id="nidsQ1InternalIP" class="form-control" placeholder="Please input the attacked internal IP" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="nidsQ1TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="nidsQ1TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitNIDSQ1"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 200px; overflow: auto" id="nidsResultDivQ1">
+                                        <table class="table table-hover" id="nidsQ1Table">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status</th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--NIDS Query 1 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (NIDS) Query 1 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="nidsQ1Result">
+                                <div id="nidslegendQ1">
+                                    <fieldset style="padding-top: 0; margin-top: 0;">
+                                        <!--<legend align="center" style="font-size:18px">Node information</legend>-->
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(204,204,204)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internet (incoming)</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(153,153,153)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internet (response)</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(204,204,255)" />
+                                            <text x="100" y="30" font-size="18" fill="black">DMZ</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(102,255,255)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internal LAN</text>
+                                        </svg>
+                                    </fieldset>
+                                </div>
+                                <div id="nidscyQ1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (NIDS) Query 2 - Identifying Victims of Zero-day Attacks
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <form id="nidsQ2Form">
+                                            <div class="form-group">
+                                                <label for="nidsQ2AttackSignature" class="form-control-label require">Attacked Signature</label>
+                                                <input id="nidsQ2AttackSignature" class="form-control" placeholder="Please input the given attack signature" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="nidsQ2TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="nidsQ2TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitNIDSQ2"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 200px; overflow: auto" id="nidsResultDivQ2">
+                                        <table class="table table-hover" id="nidsQ2Table">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--NIDS Query 2 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (NIDS) Query 2 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="nidsQ2Result">
+                                <div id="nidslegendQ2">
+                                    <fieldset style="padding-top: 0; margin-top: 0;">
+                                        <!--<legend align="center" style="font-size:18px">Node information</legend>-->
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(204,204,204)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internet (incoming)</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(153,153,153)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internet (response)</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(204,204,255)" />
+                                            <text x="100" y="30" font-size="18" fill="black">DMZ</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(102,255,255)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internal LAN</text>
+                                        </svg>
+                                    </fieldset>
+                                </div>
+                                <div id="nidscyQ2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (NIDS) Query 3 - Measuring Cascading Damages
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <form id="nidsQ3Form">
+                                            <div class="form-group">
+                                                <label for="nidsQ3AttackerIP" class="form-control-label require">Attacker IP</label>
+                                                <input id="nidsQ3AttackerIP" class="form-control" placeholder="Please input the attacker IP" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="nidsQ3AttackedTimepoint" class="form-control-label require">Time Interval</label>
+                                                <input id="nidsQ3AttackedTimepoint" class="form-control" placeholder="Please input the attacked time point t', s.t., t'-now" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitNIDSQ3"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 200px; overflow: auto" id="nidsResultDivQ3">
+                                        <table class="table table-hover" id="nidsQ3Table">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--NIDS Query 3 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (NIDS) Query 3 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="nidsQ3Result">
+                                <div id="nidslegendQ3">
+                                    <fieldset style="padding-top: 0; margin-top: 0;">
+                                        <!--<legend align="center" style="font-size:18px">Node information</legend>-->
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(204,204,204)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internet (incoming)</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(153,153,153)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internet (response)</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(204,204,255)" />
+                                            <text x="100" y="30" font-size="18" fill="black">DMZ</text>
+                                        </svg>
+                                        <svg height="60" width="20%">
+                                            <circle cx="50" cy="25" r="15" stroke="black" stroke-width="3" fill="rgb(102,255,255)" />
+                                            <text x="100" y="30" font-size="18" fill="black">Internal LAN</text>
+                                        </svg>
+                                    </fieldset>
+                                </div>
+                                <div id="nidscyQ3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/chart.js/chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/carbon.js}"></script>
+<script type="text/javascript" th:src="@{/js/demo.js}"></script>
+<script type="text/javascript" th:src="@{/js/cytoscape.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/nids.js}"></script>
+</body>
+</html>

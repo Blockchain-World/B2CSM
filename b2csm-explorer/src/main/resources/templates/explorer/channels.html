@@ -1,0 +1,177 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>B2CSM Explorer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/font-awesome/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <div th:replace="explorer/header :: myheader"></div>
+
+    <div class="main-container">
+        <!--<div th:replace="explorer/sidebar :: mysidebar"></div>-->
+
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/index}" class="nav-link">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/enterprises_explorer}" class="nav-link">
+                            <i class="icon icon-people"></i> Enterprises
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/orderer_explorer}" class="nav-link">
+                            <i class="icon icon-target"></i> Orderers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/peers_explorer}" class="nav-link">
+                            <i class="icon icon-folder"></i> Peer Nodes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/cas_explorer}" class="nav-link">
+                            <i class="icon icon-energy"></i> CA Service
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/channels_explorer}" class="nav-link active">
+                            <i class="icon icon-grid"></i> Channels (APPs)
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/blocks_explorer}" class="nav-link">
+                            <i class="icon icon-clock"></i> Blocks
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/transactions_explorer}" class="nav-link">
+                            <i class="icon icon-anchor"></i> Transactions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/chaincodes_explorer}" class="nav-link">
+                            <i class="icon icon-graph"></i> Chaincodes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <a th:href="@{/honeypots}">
+                    <div class="card text-white border-0">
+                        <div class="card-header bg-primary">
+                            <i class="icon icon-grid"></i> Channel 1 - b2csm-honeypots <!--<span id="b2csmchannel1"></span>-->
+                        </div>
+
+                        <div class="card-body bg-primary">
+                            Proxy-based CSM queries: we use a dataset collected from a set of honeypots spanning over 7000 IP addresses.
+                            To increase network density, we limit our analysis to only the most active subnet within the dataset.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a th:href="@{/nids}">
+                    <div class="card text-white border-0">
+                        <div class="card-header bg-info">
+                            <i class="icon icon-grid"></i> Channel 2 - b2csm-nids <!--<span id="b2csmchannel2"></span>-->
+                        </div>
+
+                        <div class="card-body bg-info">
+                           NIDS-centered CSM: to demonstrate the NIDS-centered CSM, we conduct a case study using data from the 2017 CDX Competition, as collected by the USMA team.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a th:href="@{/gtmw}">
+                    <div class="card text-white border-0">
+                        <div class="card-header bg-danger">
+                            <i class="icon icon-grid"></i> Channel 3 - b2csm-gtmw <!--<span id="b2csmchannel3"></span>-->
+                        </div>
+
+                        <div class="card-body bg-danger">
+                            URL-centered CSM: we use the Georgia Tech data as if it were collected as such. The GT data contains mappings between applications,
+                            which are malware instances in this particular dataset.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--<div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card text-white border-0">
+                        <div class="card-header bg-success">
+                            Success Card
+                        </div>
+
+                        <div class="card-body bg-success">
+                            ...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-white border-0">
+                        <div class="card-header bg-warning">
+                            Warning Card
+                        </div>
+
+                        <div class="card-body bg-warning">
+                          ...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-white border-0">
+                        <div class="card-header bg-dark">
+                            Dark Card
+                        </div>
+
+                        <div class="card-body bg-dark">
+                        ...
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/chart.js/chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/carbon.js}"></script>
+<script type="text/javascript" th:src="@{/js/demo.js}"></script>
+<!--<script type="text/javascript" th:src="@{/js/channels.js}"></script>-->
+</body>
+</html>

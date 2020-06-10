@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tutorial 1: Getting Started</title>
+    <style>
+        #cy {
+            width: 75%;
+            height: 90%;
+            position: absolute;
+            top: 10%;
+            left: 25%;
+        }
+        #legend {
+            width: 5%;
+            height:80%;
+            position: absolute;
+            top:30%;
+            left: 1%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="legend">
+    <fieldset>
+        <legend align="center" style="font-size:30px">Node information</legend>
+        <svg height="100" width="350">
+            <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="rgb(204,204,204)" />
+            <text x="100" y="60" font-size="30" fill="black">Internet (incoming)</text>
+        </svg>
+        <svg height="100" width="400">
+            <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="rgb(153,153,153)" />
+            <text x="100" y="60" font-size="30" fill="black">Internet (response)</text>
+        </svg>
+        <svg height="100" width="300">
+            <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="rgb(204,204,255)" />
+            <text x="100" y="60" font-size="30" fill="black">DMZ</text>
+        </svg>
+        <svg height="100" width="300">
+            <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="rgb(102,255,255)" />
+            <text x="100" y="60" font-size="30" fill="black">Internal LAN</text>
+        </svg>
+    </fieldset>
+</div>
+<div id="cy"></div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/cytoscape.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/case2Demo.js}"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+################################################################################
+#
+#   Section: Organizations
+#
+#   - This section defines the different organizational identities which will
+#   be referenced later in the configuration.
+#
+################################################################################
+Organizations:
+
+    # SampleOrg defines an MSP using the sampleconfig.  It should never be used
+    # in production but may be used as a template for other definitions
+    - &OrderingNodes
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: OrderingNodes
+
+        # ID to load the MSP definition as
+        ID: OrdererMSP
+
+        # MSPDir is the filesystem path which contains the MSP configuration
+        MSPDir: crypto-config/ordererOrganizations/orderer.b2csm/msp
+
+        # AdminPrincipal: Role.MEMBER
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Writers:
+                Type: Signature
+                Rule: "AND('OrdererMSP.member','OrdererMSP.member')"
+            Admins:
+                Type: Signature
+                Rule: "OR('OrdererMSP.admin')"
+
+    - &Frontends
+        Name: Frontends
+        ID: FrontendsMSP
+        MSPDir: crypto-config/ordererOrganizations/frontend.b2csm/msp
+        # AdminPrincipal: Role.MEMBER
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('FrontendsMSP.member')"
+            Writers:
+                Type: Signature
+                Rule: "OR('FrontendsMSP.member')"
+            Admins:
+                Type: Signature
+                Rule: "OR('FrontendsMSP.admin')"
+
+    - &Ent1
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Ent1
+
+        # ID to load the MSP definition as
+        ID: Ent1MSP
+
+        MSPDir: crypto-config/peerOrganizations/ent1.b2csm/msp
+
+        # AdminPrincipal: Role.MEMBER
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Ent1MSP.member')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Ent1MSP.member')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Ent1MSP.admin')"
+
+        # leave this flag set to true.
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: 0.peer.ent1.b2csm
+              Port: 7051
+
+################################################################################
+#
+#   SECTION: Capabilities
+#
+################################################################################
+Capabilities:
+    # Channel capabilities apply to both the orderers and the peers and must be
+    # supported by both. Set the value of the capability to true to require it.
+    Channel: &ChannelCapabilities
+        V1_1: true
+    Orderer: &OrdererCapabilities
+        V1_1: true
+    Application: &ApplicationCapabilities
+        V1_2: true
+        V1_1: false
+
+################################################################################
+#
+#   SECTION: Orderer
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for orderer related parameters
+#
+################################################################################
+Orderer: &OrdererDefaults
+    # Orderer Type -> the orderer implementation to start
+    # Available types are "solo" and "kafka"
+    OrdererType: bftsmart
+
+    Addresses:
+        - 1000.frontend.b2csm:7050
+        - 2000.frontend.b2csm:7050
+        - 3000.frontend.b2csm:7050
+
+    # Batch Timeout: The amount of time to wait before creating a batch
+    # BatchTimeout: 10s
+    BatchTimeout: 10s
+
+    # Batch Size: Controls the number of messages batched into a block
+    BatchSize:
+
+        # Max Message Count: The maximum number of messages to permit in a batch
+        MaxMessageCount: 1
+
+        # Absolute Max Bytes: The absolute maximum number of bytes allowed for
+        # the serialized messages in a batch.
+        # AbsoluteMaxBytes: 256 MB
+        AbsoluteMaxBytes: 2 MB
+
+        # Preferred Max Bytes: The preferred maximum number of bytes allowed for
+        # the serialized messages in a batch. A message larger than the preferred
+        # max bytes will result in a batch larger than preferred max bytes.
+        # PreferredMaxBytes: 512 KB
+        PreferredMaxBytes: 3 KB
+
+    MaxChannels: 0
+    # Organizations is the list of orgs which are defined as participants on
+    # the orderer side of the network
+    BFTsmart:
+        ConnectionPoolSize: 20
+        RecvPort: 9999
+
+    Organizations:
+
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+        BlockValidation:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+
+    Capabilities:
+        <<: *OrdererCapabilities
+
+################################################################################
+#
+#   SECTION: Application
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for application related parameters
+#
+################################################################################
+Application: &ApplicationDefaults
+
+    # Organizations is the list of orgs which are defined as participants on
+    # the application side of the network
+    Organizations:
+
+    Policies: &ApplicationDefaultPolicies
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+    Capabilities:
+        <<: *ApplicationCapabilities
+
+################################################################################
+#
+#   SECTION: Channel
+#
+#   - This section defines the values to encode into a config transaction or 
+#   genesis block for channel related parameters.
+#   
+################################################################################
+Channel: &ChannelDefaults
+    #   - Policies defines the set of policies at this level of the config tree
+    #   For Channel policies, their canonical path is
+    #   /Channel/<PolicyName>
+    Policies:
+        # Who may invoke the 'Deliver' API
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        # Who may invoke the 'Broadcast' API
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        # By default, who may modify elements at this config level
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+    # Capabilities describes the channel level capabilities, see the dedicated
+    # Capabilities section elsewhere in this file for a full description
+    Capabilities:
+        <<: *ChannelCapabilities
+
+################################################################################
+#
+#   Profile
+#
+#   - Different configuration profiles may be encoded here to be specified
+#   as parameters to the configtxgen tool
+#
+################################################################################
+Profiles:
+
+    B2CSMGenesis:
+        <<: *ChannelDefaults
+        Orderer:
+            <<: *OrdererDefaults
+            OrdererType: bftsmart
+            Addresses:
+                - 1000.frontend.b2csm:7050
+                - 2000.frontend.b2csm:7050
+                - 3000.frontend.b2csm:7050
+
+            Organizations:
+                - *OrderingNodes
+                - *Frontends
+        Consortiums:
+            B2CSMConsortium:
+                Organizations:
+                    - *Ent1
+    B2CSMChannel:
+        Consortium: B2CSMConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Ent1

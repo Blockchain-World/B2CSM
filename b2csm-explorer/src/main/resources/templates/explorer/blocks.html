@@ -1,0 +1,135 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>B2CSM Explorer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/font-awesome/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <div th:replace="explorer/header :: myheader"></div>
+
+    <div class="main-container">
+        <!--<div th:replace="explorer/sidebar :: mysidebar"></div>-->
+
+        <div class="sidebar">
+            <ul class="nav">
+                <li class="nav-title">Navigation</li>
+
+                <li class="nav-item">
+                    <a th:href="@{/index}" class="nav-link">
+                        <i class="icon icon-speedometer"></i> Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/enterprises_explorer}" class="nav-link">
+                        <i class="icon icon-people"></i> Enterprises
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/orderer_explorer}" class="nav-link">
+                        <i class="icon icon-target"></i> Orderers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/peers_explorer}" class="nav-link">
+                        <i class="icon icon-folder"></i> Peer Nodes
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/cas_explorer}" class="nav-link">
+                        <i class="icon icon-energy"></i> CA Service
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/channels_explorer}" class="nav-link">
+                        <i class="icon icon-grid"></i> Channels (APPs)
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/blocks_explorer}" class="nav-link active">
+                        <i class="icon icon-clock"></i> Blocks
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/transactions_explorer}" class="nav-link">
+                        <i class="icon icon-anchor"></i> Transactions
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a th:href="@{/chaincodes_explorer}" class="nav-link">
+                        <i class="icon icon-graph"></i> Chaincodes
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+
+            <!--select channel for blocks-->
+            <div class="form-group">
+                <label for="blockChannelSelection">CHANNEL</label>
+                <select id="blockChannelSelection" class="form-control">
+                    <option value="b2csm-honeypots">B2CSM CHANNEL-HONEYPOTS</option>
+                    <option value="b2csm-nids">B2CSM CHANNEL-NIDS</option>
+                    <option value="b2csm-gtmw">B2CSM CHANNEL-GTMW</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <i class="icon icon-clock"></i> Blocks
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="blocksTable" style="align-content: center">
+                                    <thead>
+                                    <tr>
+                                        <th>Height</th>
+                                        <th>Block Hash</th>
+                                        <th>Transactions</th>
+                                        <th>Previous Hash</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!--<tr>
+                                        <td>1</td>
+                                        <td class="text-nowrap"><span id="blockResults"></span></td>
+                                        <td>31,589</td>
+                                        <td>$800</td>
+                                        <td>5%</td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/chart.js/chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/carbon.js}"></script>
+<script type="text/javascript" th:src="@{/js/demo.js}"></script>
+<script type="text/javascript" th:src="@{/js/blocks.js}"></script>
+</body>
+</html>

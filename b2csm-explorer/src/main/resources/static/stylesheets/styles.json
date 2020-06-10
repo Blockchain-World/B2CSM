@@ -1,0 +1,166 @@
+{
+  "style" : [ {
+    "selector" : "node",
+    "css" : {
+      "border-opacity" : 1.0,
+      "color" : "rgb(0,0,0)",
+      "font-family" : "SansSerif.plain",
+      "font-weight" : "normal",
+      "background-opacity" : 1.0,
+      "border-width" : 4.0,
+      "shape" : "ellipse",
+      "border-color" : "rgb(0,0,0)",
+      "height" : 50.0,
+      "width" : 138.0,
+      "font-size" : 18,
+      "text-opacity" : 1.0,
+      "background-color" : "rgb(204,204,204)",
+      "text-valign" : "center",
+      "text-halign" : "center",
+      "content" : "data(name)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-6']",
+    "css" : {
+      "background-color" : "rgb(204,204,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-3']",
+    "css" : {
+      "background-color" : "rgb(204,204,204)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-113']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-2']",
+    "css" : {
+      "background-color" : "rgb(204,204,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-101']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-1']",
+    "css" : {
+      "background-color" : "rgb(204,204,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-100']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-10-40']",
+    "css" : {
+      "background-color" : "rgb(153,153,153)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-70-102']",
+    "css" : {
+      "background-color" : "rgb(153,153,153)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-40-221']",
+    "css" : {
+      "background-color" : "rgb(153,153,153)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-10-62']",
+    "css" : {
+      "background-color" : "rgb(153,153,153)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-10-93']",
+    "css" : {
+      "background-color" : "rgb(153,153,153)"
+    }
+  },  {
+    "selector" : "node[id = '192-168-60-3']",
+    "css" : {
+      "background-color" : "rgb(204,204,255)"
+    }
+  },{
+    "selector" : "node[id = '192-168-60-34']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-33']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-35']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-97']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-99']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-110-2']",
+    "css" : {
+      "background-color" : "rgb(153,153,153)"
+    }
+  }, {
+    "selector" : "node[id = '192-168-60-98']",
+    "css" : {
+      "background-color" : "rgb(102,255,255)"
+    }
+  }, {
+    "selector" : "node:selected",
+    "css" : {
+      "background-color" : "rgb(255,0,102)"
+    }
+  }, {
+    "selector" : "edge",
+    "css" : {
+      "target-arrow-color" : "rgb(0,0,0)",
+      "text-opacity" : 1.0,
+      "font-family" : "SansSerif.plain",
+      "font-weight" : "normal",
+      "color" : "rgb(51,153,255)",
+      "line-style" : "solid",
+      "curve-style": "bezier",
+      "content" : "",
+      "source-arrow-color" : "rgb(0,0,0)",
+      "source-arrow-shape" : "none",
+      "opacity" : 1.0,
+      "font-size" : 12,
+      "line-color" : "rgb(0,0,0)",
+      "target-arrow-shape" : "triangle",
+      "width" : 2.0
+    }
+  }, {
+    "selector" : "edge:selected",
+    "css" : {
+      "line-color" : "rgb(255,0,0)"
+    }
+  }, {
+    "selector": "node.highlight",
+    "css": {
+      "line-color": "rgb(255, 0, 0)",
+      "background-color" : "rgb(255,0,0)"
+    }
+  } , {
+    "selector": "edge.highlight",
+    "css": {
+      "line-color": "rgb(255, 0, 0)",
+      "target-arrow-color": "rgb(255, 0, 0)",
+      "background-color" : "rgb(255,0,0)"
+    }
+  }
+  ]
+}

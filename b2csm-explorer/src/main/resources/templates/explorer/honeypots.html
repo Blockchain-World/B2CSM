@@ -1,0 +1,332 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>B2CSM Explorer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/font-awesome/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body class="sidebar-fixed header-fixed sidebar-hidden">
+<div class="page-wrapper">
+    <div th:replace="explorer/header :: myheader"></div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/index}" class="nav-link">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/enterprises_explorer}" class="nav-link">
+                            <i class="icon icon-energy"></i> Enterprises
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/orderer_explorer}" class="nav-link">
+                            <i class="icon icon-target"></i> Orderers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/peers_explorer}" class="nav-link">
+                            <i class="icon icon-graph"></i> Peer Nodes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/cas_explorer}" class="nav-link">
+                            <i class="icon icon-puzzle"></i> CA Service
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/channels_explorer}" class="nav-link active">
+                            <i class="icon icon-grid"></i> Channels (APPs)
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/blocks_explorer}" class="nav-link">
+                            <i class="icon icon-umbrella"></i> Blocks
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/transactions_explorer}" class="nav-link">
+                            <i class="icon icon-anchor"></i> Transactions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/chaincodes_explorer}" class="nav-link">
+                            <i class="icon icon-badge"></i> Chaincodes
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                Honeypots Data Structure
+                            </div>
+
+                            <div class="card-body">
+                                <div style="width: 850px; height: 450px;">
+                                    <img height="400px" width="800px" th:src="@{/imgs/honeypots_architecture.jpg}" /> <br />
+                                    Data structure for storing proxy-centered CSM data, which is a time series of bipartite graphs
+                                    (time resolution: per day for our demo of dataset over the span of 7 time intervals).
+                                    Each bipartite graph G(t) at time t is represented by a directional matrix of rows,
+                                    representing the IP source of connections, and columns, representing the IP destination of connections.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (Honeypots) Query 1 - Identify Victims
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <!--<div class="form-group">
+                                            <label for="honeypotsIdenVic">Query Functionality</label>
+                                            <select id="honeypotsIdenVic" class="form-control">
+                                                <option>Q1 - Identifying Victims</option>
+                                                <option>Q2 - Identifying Potential Attackers</option>
+                                                <option>Q3 - Identifying Potential Victims</option>
+                                            </select>
+                                        </div>-->
+                                        <form id="honeypotsQ1Form">
+                                            <div class="form-group">
+                                                <label for="honeypotsQ1AttackerIP" class="form-control-label require">Attacker IP</label>
+                                                <input id="honeypotsQ1AttackerIP" class="form-control" placeholder="Please input the attacker (external) IP" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="honeypotsQ1TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="honeypotsQ1TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitHoneypotsQ1"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 300px; overflow: auto" id="resultDivQ1">
+                                        <table class="table table-hover" id="honeypotsVictimsTable">
+                                            <!--<head>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </head>-->
+                                            <tbody>
+                                            <tr></tr>
+                                            </tbody>
+                                        </table>
+
+                                        <!--<form id="testCYForm">
+                                            <input class="btn btn-primary" type="button" value="Submit" id="testCYSubmit" />
+                                        </form>-->
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Honeypots Query 1 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (Honeypots) Query 1 - Visualized Query Result
+                            </div>
+                            <div class="card-body" style="text-align: left" id="honeypotsQ1Result">
+                                <div id="cyQ1"><!--<span style="width: 40px; height: 30px; border: #606060 solid">day 1</span>--></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (Honeypots) Query 2 - Identify Potential Attackers
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+
+                                        <form id="honeypotsQ2Form">
+                                            <div class="form-group">
+                                                <label for="honeypotsQ2InternalIP" class="form-control-label require">Internal IP</label>
+                                                <input id="honeypotsQ2InternalIP" class="form-control" placeholder="Please input the internal IP" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="honeypotsQ2TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="honeypotsQ2TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitHoneypotsQ2"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 300px; overflow: auto" id="resultDivQ2">
+                                        <table class="table table-hover" id="honeypotsAttackersTable">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                            <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Honeypots Query 2 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (Honeypots) Query 2 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="honeypotsQ2Result">
+                                <div id="cyQ2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (Honeypots) Query 3 - Identify Potential Victims
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <!--<div class="form-group">
+                                            <label for="honeypotsQueryFunc">Query Functionality</label>
+                                            <select id="honeypotsQueryFunc" class="form-control">
+                                                <option>Q1 - Identifying Victims</option>
+                                                <option>Q2 - Identifying Potential Attackers</option>
+                                                <option>Q3 - Identifying Potential Victims</option>
+                                            </select>
+                                        </div>-->
+
+                                        <form id="honeypotsQ3Form">
+                                            <div class="form-group">
+                                                <label for="honeypotsQ3KnownVicIP" class="form-control-label require">Known Victim IP</label>
+                                                <input id="honeypotsQ3KnownVicIP" class="form-control" placeholder="Please input the known victim (internal) IP" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="honeypotsQ3TimeInterval" class="form-control-label require">Time Interval</label>
+                                                <input id="honeypotsQ3TimeInterval" class="form-control" placeholder="Please input the time interval, e.g., day1-day2" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="btn btn-primary" type="button" value="Submit" id="submitHoneypotsQ3"/>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="col-md-8" style="height: 300px; overflow: auto" id="resultDivQ3">
+                                        <table class="table table-hover" id="honeypotsPotentialVicTable">
+                                            <!--<thead>
+                                            <tr>
+                                                <th>Status </th>
+                                                <th>Query Result</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                            </thead>-->
+                                            <tbody>
+                                            <tr></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Honeypots Query 3 Result-->
+                <div class="row" align="center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                B2CSM (Honeypots) Query 3 - Visualized Query Result
+                            </div>
+
+                            <div class="card-body" style="text-align: left" id="honeypotsQ3Result">
+                                <div id="cyQ3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/chart.js/chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/carbon.js}"></script>
+<script type="text/javascript" th:src="@{/js/demo.js}"></script>
+<script type="text/javascript" th:src="@{/js/cytoscape.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/honeypots.js}"></script>
+</body>
+</html>

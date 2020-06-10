@@ -1,0 +1,282 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>B2CSM Explorer</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/simple-line-icons/css/simple-line-icons.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/font-awesome/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <div th:replace="explorer/header :: myheader"></div>
+
+    <div class="main-container">
+        <!--<div th:replace="explorer/sidebar :: mysidebar"></div>-->
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/index}" class="nav-link active">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/enterprises_explorer}" class="nav-link">
+                            <i class="icon icon-people"></i> Enterprises
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/orderer_explorer}" class="nav-link">
+                            <i class="icon icon-target"></i> Orderers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/peers_explorer}" class="nav-link">
+                            <i class="icon icon-folder"></i> Peer Nodes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/cas_explorer}" class="nav-link">
+                            <i class="icon icon-energy"></i> CA Service
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/channels_explorer}" class="nav-link">
+                            <i class="icon icon-grid"></i> Channels (APPs)
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/blocks_explorer}" class="nav-link">
+                            <i class="icon icon-clock"></i> Blocks
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/transactions_explorer}" class="nav-link">
+                            <i class="icon icon-anchor"></i> Transactions
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/chaincodes_explorer}" class="nav-link">
+                            <i class="icon icon-graph"></i> Chaincodes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{/dataReplication}" class="nav-link">
+                            <i class="icon icon-reload"></i> Replication
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="content">
+            <div class="container-fluid">
+
+                <!--select channel for dashborad-->
+                <div class="form-group">
+                    <label for="channelSelection">Select Channel</label>
+                    <select id="channelSelection" class="form-control">
+                        <option value="b2csm-honeypots">B2CSM CHANNEL-HONEYPOTS</option>
+                        <option value="b2csm-nids">B2CSM CHANNEL-NIDS</option>
+                        <option value="b2csm-gtmw">B2CSM CHANNEL-GTMW</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="enterprisesResult">-</span>
+                                    <span class="font-weight-light">Enterprises (Organizations)</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-people"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="orderersResult">-</span>
+                                    <span class="font-weight-light">Ordering Nodes (BFT-SMaRt)</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-target"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                            <div class="card p-4">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h4 d-block font-weight-normal mb-2" id="peersResult">-</span>
+                                        <span class="font-weight-light">PEER NODES</span>
+                                    </div>
+                                    <div class="h2 text-muted">
+                                        <!--<i class="icon icon-cloud-download"></i>-->
+                                        <i class="icon icon-folder"></i>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="casResult">-</span>
+                                    <span class="font-weight-light">CA Service</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-energy"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="channelsResult">-</span>
+                                    <span class="font-weight-light">CHANNELS</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-grid"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="blocksResult">-</span>
+                                    <span class="font-weight-light">BLOCKS</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-clock"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="transactionsResult">-</span>
+                                    <span class="font-weight-light">TRANSACTIONS</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-anchor"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2" id="chaincodesResult">-</span>
+                                    <span class="font-weight-light">CHAINCODES</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <i class="icon icon-graph"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--<div class="row ">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Transaction Traffic (2019)
+                            </div>
+
+                            <div class="card-body p-0">
+                                <div class="p-4 ">
+                                    <canvas id="line-chart" width="100%" height="20"></canvas>
+                                </div>
+
+                                <div class="justify-content-around mt-4 p-4 bg-light d-flex border-top d-md-down-none">
+                                    <div class="text-center">
+                                        <div class="text-muted small">Transaction Traffic (2019)</div>
+                                        <div>12,457 Users (40%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Banned Users</div>
+                                        <div>95,333 Users (5%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Page Views</div>
+                                        <div>957,565 Pages (50%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Total Downloads</div>
+                                        <div>957,565 Files (100 TB)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>-->
+
+                <!--footer-->
+                <div class="row" align="center">
+                    <div class="col-md-12">Copyright &copy; 2019 B2CSM Project. Supported by Air Force Research Lab.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/popper.js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/vendor/chart.js/chart.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/carbon.js}"></script>
+<script type="text/javascript" th:src="@{/js/demo.js}"></script>
+<script type="text/javascript" th:src="@{/js/dashboard.js}"></script>
+</body>
+</html>

@@ -1,0 +1,663 @@
+{
+  "format_version" : "1.0",
+  "generated_by" : "cytoscape-3.7.2",
+  "target_cytoscapejs_version" : "~2.1",
+  "data" : {
+    "name" : "g1",
+    "SUID" : 62,
+    "__Annotations" : [ ],
+    "selected" : true
+  },
+  "elements" : {
+    "nodes" : [ {
+      "data" : {
+        "id" : "192-168-60-35",
+        "name" : "192.168.60.35",
+        "SUID" : 90,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -894.8107647912947,
+        "y" : -9.203975677490234
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-5",
+        "name" : "192.168.10.5",
+        "SUID" : 108,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1279.485743997768,
+        "y" : -135.982177734375
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-6",
+        "name" : "192.168.60.6",
+        "SUID" : 83,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1054.5830078125,
+        "y" : -83.0965619104353
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-6",
+        "name" : "192.168.10.6",
+        "SUID" : 107,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1281.07275390625,
+        "y" : -25.193995950892827
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-61",
+         "name" : "192.168.10.61",
+        "SUID" : 106,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1279.916748046875,
+        "y" : -237.5856976526228
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-1",
+        "name" : "192.168.60.1",
+        "SUID" : 85,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1056.094970703125,
+        "y" : -178.62779665164624
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-50-240",
+        "name" : "192.168.50.240",
+        "SUID" : 105,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1191.1806640625,
+        "y" : 68.68016481570874
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-3",
+        "name" : "192.168.60.3",
+        "SUID" : 104,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1051.12744140625,
+        "y" : 5.249475000575446
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-110-2",
+        "name" : "192.168.110.2",
+        "SUID" : 101,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -890.7233624475447,
+        "y" : -345.3769793493303
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-2",
+        "name" : "192.168.60.2",
+        "SUID" : 84,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1054.4716534631696,
+        "y" : -267.6337585449219
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-195-69",
+        "name" : "192.168.195.69",
+        "SUID" : 100,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -1187.6868200267857,
+        "y" : -343.54656982421875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-33",
+        "name" : "192.168.60.33",
+        "SUID" : 99,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -894.1044659631697,
+        "y" : -223.88401794433594
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-113",
+        "name" : "192.168.60.113",
+        "SUID" : 98,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -891.7712664587053,
+        "y" : -104.27420043945312
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-34",
+        "name" : "192.168.60.34",
+        "SUID" : 97,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -729.97900390625,
+        "y" : -106.19684267215405
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-100",
+        "name" : "192.168.60.100",
+        "SUID" : 96,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -733.9794921875,
+        "y" : -225.58590268917408
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-101",
+        "name" : "192.168.60.101",
+        "SUID" : 95,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -561.7903180139509,
+        "y" : -108.84523010253906
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-40",
+        "name" : "192.168.10.40",
+        "SUID" : 94,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -414.54706239871655,
+        "y" : -350.645263671875
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-98",
+        "name" : "192.168.60.98",
+        "SUID" : 93,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -414.5138201696428,
+        "y" : -228.12289428710938
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-99",
+        "name" : "192.168.60.99",
+        "SUID" : 92,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -571.4737811071428,
+        "y" : -226.43533325195312
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-62",
+        "name" : "192.168.10.62",
+        "SUID" : 91,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -780.7851300256697,
+        "y" : 72.7959976196289
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-93",
+        "name" : "192.168.10.93",
+        "SUID" : 89,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -559.341962342634,
+        "y" : -6.640131468401144
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-97",
+        "name" : "192.168.60.97",
+        "SUID" : 88,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -727.0264368091518,
+        "y" : -8.086370468139648
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-40-221",
+        "name" : "192.168.40.221",
+        "SUID" : 87,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -414.28949403934155,
+        "y" : -13.53335189819336
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-70-102",
+        "name" : "192.168.70.102",
+        "SUID" : 86,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -660.2153930664062,
+        "y" : -349.5962305103237
+      },
+      "selected" : false
+    } ],
+    "edges" : [ {
+      "data" : {
+        "id" : "192-168-10-5-i-192-168-60-6",
+        "source" : "192-168-10-5",
+        "target" : "192-168-60-6",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain&[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain",
+        "name" : "192.168.10.5 (interacts with) 192.168.60.6",
+        "interaction" : "interacts with",
+        "SUID" : 139,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-6-i-192-168-60-33",
+        "source" : "192-168-60-6",
+        "target" : "192-168-60-33",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain&[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain",
+        "name" : "192.168.60.6 (interacts with) 192.168.60.33",
+        "interaction" : "interacts with",
+        "SUID" : 138,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-6-i-192-168-60-6",
+        "source" : "192-168-10-6",
+        "target" : "192-168-60-6",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain&[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain",
+        "name" : "192.168.10.6 (interacts with) 192.168.60.6",
+        "interaction" : "interacts with",
+        "SUID" : 137,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-61-i-192-168-60-1",
+        "source" : "192-168-10-61",
+        "target" : "192-168-60-1",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2100366:8] GPL ICMP_INFO PING *NIX&[1:2100366:8] GPL ICMP_INFO PING *NIX&[1:2100366:8] GPL ICMP_INFO PING *NIX",
+        "name" : "192.168.10.61 (interacts with) 192.168.60.1",
+        "interaction" : "interacts with",
+        "SUID" : 136,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-50-240-i-192-168-60-3",
+        "source" : "192-168-50-240",
+        "target" : "192-168-60-3",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2100366:8] GPL ICMP_INFO PING *NIX&[1:2100366:8] GPL ICMP_INFO PING *NIX",
+        "name" : "192.168.50.240 (interacts with) 192.168.60.3",
+        "interaction" : "interacts with",
+        "SUID" : 135,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-110-2-i-192-168-60-2",
+        "source" : "192-168-110-2",
+        "target" : "192-168-60-2",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2002823:11] ET POLICY POSSIBLE Web Crawl using Wget&[1:2002823:11] ET POLICY POSSIBLE Web Crawl using Wget",
+        "name" : "192.168.110.2 (interacts with) 192.168.60.2",
+        "interaction" : "interacts with",
+        "SUID" : 133,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-110-2-i-192-168-60-99",
+        "source" : "192-168-110-2",
+        "target" : "192-168-60-99",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.110.2 (interacts with) 192.168.60.99",
+        "interaction" : "interacts with",
+        "SUID" : 132,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-110-2-i-192-168-60-100",
+        "source" : "192-168-110-2",
+        "target" : "192-168-60-100",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.110.2 (interacts with) 192.168.60.100",
+        "interaction" : "interacts with",
+        "SUID" : 131,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-195-69-i-192-168-60-1",
+        "source" : "192-168-195-69",
+        "target" : "192-168-60-1",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2100366:8] GPL ICMP_INFO PING *NIX&[1:2100366:8] GPL ICMP_INFO PING *NIX",
+        "name" : "192.168.195.69 (interacts with) 192.168.60.1",
+        "interaction" : "interacts with",
+        "SUID" : 130,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-195-69-i-192-168-60-2",
+        "source" : "192-168-195-69",
+        "target" : "192-168-60-2",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2002677:13] ET SCAN Nikto Web App Scan in Progress&[1:2100987:16] GPL EXPLOIT .htr access&[1:2100977:13] GPL EXPLOIT .cnf access",
+        "name" : "192.168.195.69 (interacts with) 192.168.60.2",
+        "interaction" : "interacts with",
+        "SUID" : 129,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-33-i-192-168-60-6",
+        "source" : "192-168-60-33",
+        "target" : "192-168-60-6",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain&[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain",
+        "name" : "192.168.60.33 (interacts with) 192.168.60.6",
+        "interaction" : "interacts with",
+        "SUID" : 128,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-33-i-192-168-60-113",
+        "source" : "192-168-60-33",
+        "target" : "192-168-60-113",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain&[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain",
+        "name" : "192.168.60.33 (interacts with) 192.168.60.113",
+        "interaction" : "interacts with",
+        "SUID" : 127,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-113-i-192-168-60-33",
+        "source" : "192-168-60-113",
+        "target" : "192-168-60-33",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain&[1:2012758:5] ET INFO DYNAMIC_DNS Query to *.dyndns. Domain",
+        "name" : "192.168.60.113 (interacts with) 192.168.60.33",
+        "interaction" : "interacts with",
+        "SUID" : 126,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-113-i-192-168-60-34",
+        "source" : "192-168-60-113",
+        "target" : "192-168-60-34",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2026849:2] ET POLICY WinRM wsman Access - Possible Lateral Movement&[1:2026850:1] ET USER_AGENTS WinRM User Agent Detected - Possible Lateral Movement",
+        "name" : "192.168.60.113 (interacts with) 192.168.60.34",
+        "interaction" : "interacts with",
+        "SUID" : 125,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-34-i-192-168-60-100",
+        "source" : "192-168-60-34",
+        "target" : "192-168-60-100",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2026849:2] ET POLICY WinRM wsman Access - Possible Lateral Movement&[1:2026850:1] ET USER_AGENTS WinRM User Agent Detected - Possible Lateral Movement",
+        "name" : "192.168.60.34 (interacts with) 192.168.60.100",
+        "interaction" : "interacts with",
+        "SUID" : 124,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-34-i-192-168-60-101",
+        "source" : "192-168-60-34",
+        "target" : "192-168-60-101",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2026849:2] ET POLICY WinRM wsman Access - Possible Lateral Movement&[1:2026850:1] ET USER_AGENTS WinRM User Agent Detected - Possible Lateral Movement",
+        "name" : "192.168.60.34 (interacts with) 192.168.60.101",
+        "interaction" : "interacts with",
+        "SUID" : 123,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-34-i-192-168-60-113",
+        "source" : "192-168-60-34",
+        "target" : "192-168-60-113",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2026849:2] ET POLICY WinRM wsman Access - Possible Lateral Movement&[1:2026850:1] ET USER_AGENTS WinRM User Agent Detected - Possible Lateral Movement",
+        "name" : "192.168.60.34 (interacts with) 192.168.60.113",
+        "interaction" : "interacts with",
+        "SUID" : 122,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-100-i-192-168-60-34",
+        "source" : "192-168-60-100",
+        "target" : "192-168-60-34",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2026849:2] ET POLICY WinRM wsman Access - Possible Lateral Movement&[1:2026850:1] ET USER_AGENTS WinRM User Agent Detected - Possible Lateral Movement",
+        "name" : "192.168.60.100 (interacts with) 192.168.60.34",
+        "interaction" : "interacts with",
+        "SUID" : 121,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-60-101-i-192-168-60-34",
+        "source" : "192-168-60-101",
+        "target" : "192-168-60-34",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2026849:2] ET POLICY WinRM wsman Access - Possible Lateral Movement&[1:2026850:1] ET USER_AGENTS WinRM User Agent Detected - Possible Lateral Movement",
+        "name" : "192.168.60.101 (interacts with) 192.168.60.34",
+        "interaction" : "interacts with",
+        "SUID" : 120,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-40-i-192-168-60-98",
+        "source" : "192-168-10-40",
+        "target" : "192-168-60-98",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.10.40 (interacts with) 192.168.60.98",
+        "interaction" : "interacts with",
+        "SUID" : 119,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-40-i-192-168-60-99",
+        "source" : "192-168-10-40",
+        "target" : "192-168-60-99",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.10.40 (interacts with) 192.168.60.99",
+        "interaction" : "interacts with",
+        "SUID" : 118,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-40-i-192-168-60-100",
+        "source" : "192-168-10-40",
+        "target" : "192-168-60-100",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "10.1.10.40 (interacts with) 10.1.60.100",
+        "interaction" : "interacts with",
+        "SUID" : 117,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-40-i-192-168-60-101",
+        "source" : "192-168-10-40",
+        "target" : "192-168-60-101",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.10.40 (interacts with) 192.168.60.101",
+        "interaction" : "interacts with",
+        "SUID" : 116,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-62-i-192-168-60-35",
+        "source" : "192-168-10-62",
+        "target" : "192-168-60-35",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2013031:7] ET POLICY Python-urllib/ Suspicious User Agent&[1:2013031:7] ET POLICY Python-urllib/ Suspicious User Agent",
+        "name" : "192.168.10.62 (interacts with) 192.168.60.35",
+        "interaction" : "interacts with",
+        "SUID" : 115,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-10-93-i-192-168-60-97",
+        "source" : "192-168-10-93",
+        "target" : "192-168-60-97",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2001330:8] ET POLICY RDP connection confirm&[1:2001330:8] ET POLICY RDP connection confirm",
+        "name" : "192.168.10.93 (interacts with) 192.168.60.97",
+        "interaction" : "interacts with",
+        "SUID" : 114,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-40-221-i-192-168-60-98",
+        "source" : "192-168-40-221",
+        "target" : "192-168-60-98",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.40.221 (interacts with) 192.168.60.98",
+        "interaction" : "interacts with",
+        "SUID" : 113,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-40-221-i-192-168-60-100",
+        "source" : "192-168-40-221",
+        "target" : "192-168-60-100",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.40.221 (interacts with) 192.168.60.100",
+        "interaction" : "interacts with",
+        "SUID" : 112,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-40-221-i-192-168-60-101",
+        "source" : "192-168-40-221",
+        "target" : "192-168-60-101",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.40.221 (interacts with) 192.168.60.101",
+        "interaction" : "interacts with",
+        "SUID" : 111,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-70-102-i-192-168-60-99",
+        "source" : "192-168-70-102",
+        "target" : "192-168-60-99",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.70.102 (interacts with) 192.168.60.99",
+        "interaction" : "interacts with",
+        "SUID" : 110,
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "192-168-70-102-i-192-168-60-100",
+        "source" : "192-168-70-102",
+        "target" : "192-168-60-100",
+        "_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain_1_2012758_5_ET_INFO_DYNAMIC_DNS_Query_to_dyndns_Domain" : "[1:2014906:2] ET INFO .exe File requested over FTP&[1:2014906:2] ET INFO .exe File requested over FTP",
+        "name" : "192.168.70.102 (interacts with) 192.168.60.100",
+        "interaction" : "interacts with",
+        "SUID" : 109,
+        "selected" : false
+      },
+      "selected" : false
+    } ]
+  }
+}

@@ -1,0 +1,72 @@
+node {
+  label: data(name);
+}
+
+edge {
+  opacity: 0.5;
+}
+
+node.highlighted {
+  border-width: 6px;
+  border-color: #ff0000;
+}
+
+node.start.case1 {
+  border-color: #ff0000;
+}
+
+node.start.case2 {
+  border-color: #ff0000;
+}
+
+node.start.case3 {
+  border-color: #ff0000;
+}
+
+node.end.case1 {
+  border-color: #ff0000;
+}
+
+node.end.case2 {
+  border-color: #ff0000;
+}
+
+node.end.case3.round1 {
+  border-color: #996600;
+}
+
+node.end.case3.round2 {
+  border-color: #ff0066;
+}
+
+edge.highlightedCase1 {
+  line-color: #ff0000;
+  width: 9px;
+  curve-style: bezier;
+  target-arrow-color: #ff0000;
+  target-arrow-shape: triangle;
+}
+
+edge.highlightedCase2 {
+  line-color: #ff0000;
+  width: 9px;
+  curve-style: bezier;
+  source-arrow-color: #ff0000;
+  source-arrow-shape: triangle;
+}
+
+edge.highlighted.case3.round1 {
+  line-color: #996600;
+  width: 9px;
+  curve-style: bezier;
+  source-arrow-color: #996600;
+  source-arrow-shape: triangle;
+}
+
+edge.highlighted.case3.round2 {
+  line-color: #ff0066;
+  width: 9px;
+  curve-style: bezier;
+  target-arrow-color: #ff0066;
+  target-arrow-shape: triangle;
+}

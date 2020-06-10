@@ -1,0 +1,8 @@
+{
+  "name": "b2csm-explorer",
+  "version": "1.0.0",
+  "dependencies": {
+    "@trust/webcrypto": "^0.9.2",
+    "uniq": "^1.0.1"
+  }
+}
