@@ -158,7 +158,20 @@ The following are some example screenshots:
 ### 5. System Screenshots
 The following are some screenshots of the prototype. For demo purpose, some parameters (e.g., the topology (i.e., IP address) of the network.) are *hard-coded* and the visualization of specific CSM functions form one of our future work.
 
-#### 5.1 N-CSM
+#### 5.1 Dashboard
+The dashboard shows related information of the B2CSM network, including:
+- The number of enterprises (organizations)
+- The number of ordering nodes
+- The number of peer nodes
+- The number of CA service
+- The number of channels (N-CSM, T-CSM, A-CSM)
+- The number of blocks for a specific channel
+- The number of transactions for a specific channel
+- The number of chaincodes
+
+![B2CSM_Dashboard](https://github.com/Blockchain-World/B2CSM/blob/master/images/b2csm_dashboard.PNG)
+
+#### 5.2 N-CSM
 
 - N-CSM (Query 1: *Identify Victims*)
 
@@ -172,7 +185,7 @@ The following are some screenshots of the prototype. For demo purpose, some para
 
 ![N_CSM_Q3](https://github.com/Blockchain-World/B2CSM/blob/master/images/N_CSM_Q3.PNG)
 
-#### 5.2 T-CSM
+#### 5.3 T-CSM
 
 - T-CSM (Query 1: *Infer Attack Paths*)
 
@@ -186,7 +199,7 @@ The following are some screenshots of the prototype. For demo purpose, some para
 
 ![T_CSM_Q3](https://github.com/Blockchain-World/B2CSM/blob/master/images/T_CSM_Q3.PNG)
 
-#### 5.3 A-CSM
+#### 5.4 A-CSM
 
 - A-CSM (Query 1: *Identify Suspicious Apps*)
 
