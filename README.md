@@ -17,6 +17,8 @@ This prototype run successfully on the following configurations:
 ## Network Topology
 This prototype runs in a fully distributed environment with **four** peer nodes. As byzantine fault tolerance requires that N > 3f, where N is the total number of the full nodes in the blockchain network, and f is the number of faulty nodes that can be tolerated. In this prototype, it tolerates **one** malicious node to act arbitrarily.
 
+> The construction of B2CSM network with more peers or orderers, e.g., 7 nodes tolerating 2 faulty nodes or 10 nodes tolerating 3 faulty nodes, is elaborated in the wiki page.
+
 ## B2CSM Code
 The main files and their functionalities are:
 
